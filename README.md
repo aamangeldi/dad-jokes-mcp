@@ -1,26 +1,26 @@
 # Dad Jokes MCP Server
 
-A lightweight Model Context Protocol (MCP) server that provides dad jokes from [icanhazdadjoke.com](https://icanhazdadjoke.com).
+A lightweight Model Context Protocol (MCP) server that provides dad jokes from [icanhazdadjoke.com](https://icanhazdadjoke.com). Built with FastMCP for easy deployment to Smithery.
 
 ## Features
 
 - 🎭 Get random dad jokes
 - 🔍 Search jokes by keyword
 - 🆔 Retrieve specific jokes by ID
+- ⚡ Fast and lightweight
+- 🚀 Ready for Smithery deployment
 
 ## Tools
 
-### `get_random_joke`
+### `get_random_joke_tool`
 Get a random dad joke.
-
-**Parameters:** None
 
 **Example:**
 ```json
 {}
 ```
 
-### `search_jokes`
+### `search_jokes_tool`
 Search for dad jokes containing a specific term.
 
 **Parameters:**
@@ -35,7 +35,7 @@ Search for dad jokes containing a specific term.
 }
 ```
 
-### `get_joke_by_id`
+### `get_joke_by_id_tool`
 Retrieve a specific joke by its ID.
 
 **Parameters:**
@@ -58,7 +58,7 @@ Retrieve a specific joke by its ID.
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/dad-jokes-mcp.git
+git clone https://github.com/aamangeldi/dad-jokes-mcp.git
 cd dad-jokes-mcp
 ```
 
@@ -66,34 +66,31 @@ cd dad-jokes-mcp
 ```bash
 python3 -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
+pip install fastmcp smithery httpx
 ```
 
-3. Run the server:
+3. Run the server locally:
 ```bash
-python server.py
-```
-
-### Testing with MCP Inspector
-
-You can test the server locally using the MCP Inspector:
-
-```bash
-npx @modelcontextprotocol/inspector python server.py
+fastmcp run server.py
 ```
 
 ## Deployment to Smithery
 
 1. Push your code to GitHub
 2. Connect your repository to [Smithery](https://smithery.ai)
-3. Smithery will automatically build and deploy your MCP server
+3. Smithery will automatically detect the configuration and deploy your server
+
+The server uses:
+- `runtime: python` in `smithery.yaml`
+- FastMCP for the server implementation
+- `@smithery.server()` decorator for configuration
 
 ## Configuration
 
-The server uses the following configuration:
+The server requires no authentication or configuration. It uses the free icanhazdadjoke.com API with the following defaults:
 - API: `https://icanhazdadjoke.com`
-- No authentication required
-- Rate limiting: Follows icanhazdadjoke.com API limits
+- No API key required
+- Rate limiting follows icanhazdadjoke.com policies
 
 ## Credits
 

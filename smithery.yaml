@@ -4,11 +4,7 @@ description: A lightweight MCP server for fetching dad jokes from icanhazdadjoke
 author: Amir Amangeldi
 repository: https://github.com/aamangeldi/dad-jokes-mcp
 
-runtime: container
-dockerfile: Dockerfile
-
-startCommand:
-  type: http
+runtime: python
 
 metadata:
   tags:
