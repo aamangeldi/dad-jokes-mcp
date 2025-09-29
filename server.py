@@ -153,13 +153,24 @@ async def main():
             )
         return Response()
 
-    # Create Starlette app
+    # Create Starlette app with CORS middleware
+    from starlette.middleware.cors import CORSMiddleware
+
     starlette_app = Starlette(
         debug=True,
         routes=[
             Route("/sse", endpoint=handle_sse, methods=["GET"]),
             Mount("/messages/", app=sse.handle_post_message)
         ]
+    )
+
+    # Add CORS middleware to allow Smithery to connect
+    starlette_app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
     )
 
     # Run with uvicorn
