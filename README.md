@@ -1,5 +1,7 @@
 # Dad Jokes MCP Server
 
+[![smithery badge](https://smithery.ai/badge/@aamangeldi/ai-venture-studio-hw3)](https://smithery.ai/server/@aamangeldi/ai-venture-studio-hw3)
+
 A lightweight Model Context Protocol (MCP) server that provides dad jokes from [icanhazdadjoke.com](https://icanhazdadjoke.com).
 
 ## Features
@@ -49,6 +51,14 @@ Retrieve a specific joke by its ID.
 ```
 
 ## Local Development
+
+### Installing via Smithery
+
+To install ai-venture-studio-hw3 automatically via [Smithery](https://smithery.ai/server/@aamangeldi/ai-venture-studio-hw3):
+
+```bash
+npx -y @smithery/cli install @aamangeldi/ai-venture-studio-hw3
+```
 
 ### Prerequisites
 - Python 3.11+
