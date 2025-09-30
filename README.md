@@ -1,6 +1,8 @@
 # Dad Jokes MCP Server
 
-A lightweight Model Context Protocol (MCP) server that provides dad jokes from [icanhazdadjoke.com](https://icanhazdadjoke.com). Built with FastMCP for easy deployment to Smithery.
+[![smithery badge](https://smithery.ai/badge/@aamangeldi/dad-jokes-mcp)](https://smithery.ai/server/@aamangeldi/dad-jokes-mcp)
+
+A lightweight Model Context Protocol (MCP) server that provides dad jokes from [icanhazdadjoke.com](https://icanhazdadjoke.com).
 
 ## Features
 
