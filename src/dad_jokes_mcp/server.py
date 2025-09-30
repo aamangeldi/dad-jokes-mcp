@@ -5,7 +5,7 @@ A lightweight MCP server that provides dad jokes from icanhazdadjoke.com API.
 """
 
 import httpx
-from fastmcp import FastMCP
+from mcp.server.fastmcp import FastMCP
 from smithery.decorators import smithery
 
 # icanhazdadjoke.com API configuration
@@ -56,7 +56,7 @@ def create_server():
     async def get_random_joke_tool() -> str:
         """Get a random dad joke from icanhazdadjoke.com"""
         result = await get_random_joke()
-        return f"🎭 {result['joke']}\n\n(ID: {result['id']})"
+        return f"{result['joke']}\n\n(ID: {result['id']})"
 
     @mcp.tool()
     async def search_jokes_tool(
@@ -93,6 +93,6 @@ def create_server():
             joke_id: The ID of the joke to retrieve
         """
         result = await get_joke_by_id(joke_id)
-        return f"🎭 {result['joke']}\n\n(ID: {result['id']})"
+        return f"{result['joke']}\n\n(ID: {result['id']})"
 
     return mcp
