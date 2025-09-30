@@ -1,18 +1,1 @@
-name: dad-jokes-mcp
-version: 1.0.0
-description: A lightweight MCP server for fetching dad jokes from icanhazdadjoke.com
-author: Amir Amangeldi
-repository: https://github.com/aamangeldi/dad-jokes-mcp
-
-runtime: container
-dockerfile: Dockerfile
-
-startCommand:
-  type: http
-
-metadata:
-  tags:
-    - jokes
-    - entertainment
-    - dad-jokes
-  category: entertainment
+runtime: "python"
